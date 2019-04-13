@@ -9,6 +9,10 @@ header {
     text-align: center;
 }
 
+body {
+    margin: 0 20px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -41,6 +45,7 @@ li a:hover {
 #instructions{
     margin-top: 10px;
 }
+#search-div, #google-map {
 
 input{
     border-radius: 5px;
