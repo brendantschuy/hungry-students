@@ -7,6 +7,34 @@
 
     <link rel="stylesheet" type="text/css" href="format.css">
 
+    <script>
+        var categories = [];
+
+        function select(btnID) {
+            var optionBtn = document.getElementById(btnID);
+            var darkblue = "rgb(27, 38, 49)";
+            var lightblue = "rgb(133, 146, 158)";
+
+            if (optionBtn.style.backgroundColor == lightblue) {
+                // Select element
+                optionBtn.style.backgroundColor = darkblue;
+                optionBtn.style.borderColor = lightblue;
+                categories.push(btnID);
+            }
+            else {
+                // Deselect element
+                optionBtn.style.backgroundColor = lightblue;
+                optionBtn.style.borderColor = darkblue;
+
+                for (var i = 0; i < categories.length; i++) {
+                    if (categories[i] == btnID) {
+                        categories.splice(i,1);
+                        return;
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -36,11 +64,11 @@
             <input type="checkbox" id="category5" value="baked_goods">Baked Goods<br><br>
             -->
             
-            <button type="button" id="category1">Hot Food</button>
-            <button type="button" id="category2">Fresh Produce</button>
-            <button type="button" id="category3">Drinks</button>
-            <button type="button" id="category4">Vegetarian</button>
-            <button type="button" id="category5">Baked Goods</button><br><br>
+            <button type="button" id="hotfood" onclick="select('hotfood')">Hot Food</button>
+            <button type="button" id="produce" onclick="select('produce')">Fresh Produce</button>
+            <button type="button" id="drinks" onclick="select('drinks')">Drinks</button>
+            <button type="button" id="veg" onclick="select('veg')">Vegetarian</button>
+            <button type="button" id="baked" onclick="select('baked')">Baked Goods</button><br><br>
 
             Date:<br>
             <input type="date" id="date"><br><br>
