@@ -44,4 +44,14 @@ li a:hover {
 
 #search-div, #google-map {
 
+input{
+    border-radius: 5px;
+}
+
+input[type=text]{
+    width: 400px;
+}
+
+#description{
+    height: 100px;
 }
