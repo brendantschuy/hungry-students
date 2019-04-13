@@ -1,0 +1,39 @@
+html {
+    background-color: rgb(46,64,83);
+    color: white;
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(27,38,49);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    width: 200px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(52,73,94);
+}
+
+#welcome, #instructions {
+    margin: 0 20px;
+}
