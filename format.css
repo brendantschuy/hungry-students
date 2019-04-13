@@ -1,9 +1,10 @@
 html {
-    background-color: rgb(46,64,83);
+    /*background-color: rgb(46,64,83);*/
+    background-color: #a0d5e8;
     /*background-image: url("images/fresh_produce.jpg");
     background-repeat: no-repeat;
     background-size: cover;*/
-    color: white;
+    color: #363636;
     font-family: Segoe UI, Arial ,sans-serif;
 }
 
@@ -23,7 +24,9 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(27,38,49);
+    /*background-color: rgb(27,38,49);*/
+    background-color: #05719d;
+    /*background-color: #49a7c4;*/
 }
 
 li {
@@ -40,7 +43,8 @@ li a {
 }
 
 li a:hover {
-    background-color: rgb(52,73,94);
+    /*background-color: rgb(52,73,94);*/
+    background-color: #49a7c4;
 }
 
 #welcome, #instructions, #search-div {
@@ -72,12 +76,13 @@ input[type=text]{
 form button{
     color: white;
     border-radius: 15px;
-    background-color: rgb(133, 146, 158);
+    background-color: rgb(73, 167, 196);
     border-width: 1.5px;
     border-style: solid;
-    border-color: rgb(27, 38, 49);
+    border-color: rgb(5, 113, 157);
     padding: 5px;
-    width: 100px;
+    margin: 2px;
+    width: 150px;
 }
 
 #start_time {
@@ -86,4 +91,8 @@ form button{
 
 #end_time {
     margin-left: 23px;
+}
+
+#welcome {
+    text-align: center;
 }
