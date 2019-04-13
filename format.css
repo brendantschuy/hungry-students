@@ -43,7 +43,7 @@ li a:hover {
     background-color: rgb(52,73,94);
 }
 
-#welcome, #instructions {
+#welcome, #instructions, #search-div {
     margin: 0 20px;
 }
 
@@ -57,6 +57,8 @@ input{
 
 input[type=text]{
     width: 400px;
+    vertical-align: text-top;
+    vertical-align: top;
 }
 
 #description{
@@ -76,4 +78,12 @@ form button{
     border-color: rgb(27, 38, 49);
     padding: 5px;
     width: 100px;
+}
+
+#start_time {
+    margin-left: 20px;
+}
+
+#end_time {
+    margin-left: 23px;
 }
