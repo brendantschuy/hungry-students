@@ -1,0 +1,89 @@
+html {
+    background-color: rgb(46,64,83);
+    /*background-image: url("images/fresh_produce.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    color: white;
+    font-family: Segoe UI, Arial ,sans-serif;
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+body {
+    margin: 0 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(27,38,49);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    width: 200px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(52,73,94);
+}
+
+#welcome, #instructions, #search-div {
+    margin: 0 20px;
+}
+
+#instructions{
+    margin-top: 10px;
+}
+
+input{
+    border-radius: 5px;
+}
+
+input[type=text]{
+    width: 400px;
+    vertical-align: text-top;
+    vertical-align: top;
+}
+
+#description{
+    height: 100px;
+}
+
+#form{
+    margin: 0 30px;
+}
+
+form button{
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(133, 146, 158);
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: rgb(27, 38, 49);
+    padding: 5px;
+    width: 100px;
+}
+
+#start_time {
+    margin-left: 20px;
+}
+
+#end_time {
+    margin-left: 23px;
+}

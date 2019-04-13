@@ -31,3 +31,4 @@ c:\dev\fun\bs2\obj\Debug\netcoreapp2.1\bs2.dll
 c:\dev\fun\bs2\obj\Debug\netcoreapp2.1\bs2.pdb
 c:\dev\fun\bs2\obj\Debug\netcoreapp2.1\bs2.csproj.CopyComplete
 c:\dev\fun\bs2\obj\Debug\netcoreapp2.1\Razor\Views\Home\Access.g.cshtml.cs
+c:\dev\fun\bs2\obj\Debug\netcoreapp2.1\Razor\Views\Home\AddPage.g.cshtml.cs

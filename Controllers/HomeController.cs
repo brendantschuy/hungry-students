@@ -12,7 +12,7 @@ namespace bs2.Controllers
 {
     public class HomeController : Controller
     {
-        
+
 
         
         SqlConnection conn;
@@ -25,6 +25,11 @@ namespace bs2.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
+            return View();
+        }
+
+        public IActionResult AddPage()
+        {
             return View();
         }
 
@@ -49,24 +54,30 @@ namespace bs2.Controllers
                 Environment.Exit(-1);
             }
             SqlDataAdapter cmd = new SqlDataAdapter();  
-            cmd.InsertCommand = new SqlCommand("INSERT INTO new_food(event_name, event_start, event_end, event_address, descript, food_type) VALUES('Hackathon @ Vacasa', '2019-04-13 09:00:00', '2019-04-13 17:00:00', '850 NW 13th Ave. Portland, OR 97209', 'A Hackathon at Vacasa, all types of food provided', 'Fresh Produce, Drinks, Vegetarian, Baked Goods');");
+            cmd.InsertCommand = new SqlCommand("INSERT INTO new_food(event_name, event_start, event_end, event_date, event_address, descript, food_type) VALUES('Hackathon @ Vacasa', '0900', '1700', '030993', '850 NW 13th Ave. Portland, OR 97209', 'A Hackathon at Vacasa, all types of food provided', 'Fresh Produce, Drinks, Vegetarian, Baked Goods');");
             cmd.InsertCommand.Connection = conn;
             cmd.InsertCommand.ExecuteNonQuery();
             Console.WriteLine("SQL Query execution successful.");
             
             return new JsonResult( new{
                 Data = "Connection succeeded",
-                Test = "hello",
                 success = true
             });
         }
 
-        /* public ActionResult SendQuery(string query)
+        public class JsonObject
         {
+            
+        }
+        
+        public ActionResult Search(string query)
+        {
+            string connString = "Server=tcp:tschuy.database.windows.net,1433;Initial Catalog=Projects;Persist Security Info=False;User ID=tschuy;Password=Vacasa321;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
             conn = new SqlConnection(connString);
             conn.Open();
 
-            var cmd = new SqlCommand("SELECT * FROM list WHERE name = '" + query + "';", conn);
+            var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name = '" + query + "';", conn);
             
             cmd.ExecuteNonQuery();
             var reader = cmd.ExecuteReader();
@@ -85,7 +96,7 @@ namespace bs2.Controllers
             });
            
         }
-*/
+        
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

@@ -18,18 +18,32 @@ function GetMessage()
 //Connects to database
 function ConnectToDatabase()
 {
-    $.get("/Database/ConnectToDatabase",
+    $.get("/Home/ConnectToDatabase",
         function (data)
         {
             $("#db").html(data);
         });
 }
 
+function AddToDatabase()
+{
+    var event_name = $("#event_name").val();
+    var event_date = $("#date").val();
+    var event_start = $("#start_time").val();
+    var event_end = $("#end_time").val();
+    var event_info = $("#description").val();
+    var event_address = $("#adress").val();
+
+
+    $.post("/Home/AddToDatabase",
+        {event_date = eventdate, event_name = eventname, event_start = start, event_end = end, event_address = address, descript = event_info, food_type = categories});
+}
+
 //Sends SQL query to database
 function Search()
 {
     var query = document.getElementById("searchbox").value;
-    $.get("/Database/SendQuery", { query },
+    $.get("/Database/Search ", { query },
         function (response)
         {
             $("#db").html(response);

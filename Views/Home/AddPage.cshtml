@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Access";
+    <!--Layout = "~/Views/Shared/_layout.cshtml";-->
+}
+
+<script>
+    function ConnectToDatabase() {
+        $.get("/Home/ConnectToDatabase", function (data) {
+            $("p").html(data);
+        });
+    }
+
+    var categories = [];
+
+        function select(btnID) {
+            var optionBtn = document.getElementById(btnID);
+            var darkblue = "rgb(27, 38, 49)";
+            var lightblue = "rgb(133, 146, 158)";
+
+            if (optionBtn.style.backgroundColor == lightblue) {
+                // Select element
+                optionBtn.style.backgroundColor = darkblue;
+                optionBtn.style.borderColor = lightblue;
+                categories.push(btnID);
+            }
+            else {
+                // Deselect element
+                optionBtn.style.backgroundColor = lightblue;
+                optionBtn.style.borderColor = darkblue;
+
+                for (var i = 0; i < categories.length; i++) {
+                    if (categories[i] == btnID) {
+                        categories.splice(i,1);
+                        return;
+                    }
+                }
+            }
+        }
+</script>
+
+@using bs2.Controllers;
+<div id = "instructions">
+        Know of an event with free food? Add it! 
+        <p>Include the name, category, date, start time/end time, 
+        address, and a brief description of the event.</p>
+    </div>
+
+    <div id = "form">
+        <form><br>
+            Event name:<br>
+            <input type="text" id="event_name"><br><br>
+           
+            Category:<br>
+            <i>Select one or more categories of food</i><br>
+            <button type="button" id="hotfood" onclick="select('hotfood')">Hot Food</button>
+            <button type="button" id="produce" onclick="select('produce')">Fresh Produce</button>
+            <button type="button" id="drinks" onclick="select('drinks')">Drinks</button>
+            <button type="button" id="veg" onclick="select('veg')">Vegetarian</button>
+            <button type="button" id="baked" onclick="select('baked')">Baked Goods</button><br><br>
+
+            Date:<br>
+            <input type="date" id="date"><br><br>
+
+            Time:<br>
+            Start <input type="time" id="start_time"><br>
+            End <input type="time" id="end_time"><br><br>
+
+            Address:<br>
+            <input type="text" id="adress"><br><br>
+
+            Description:<br>
+            <input type="text" id="description"><br><br>
+
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
