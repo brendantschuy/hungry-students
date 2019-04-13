@@ -38,6 +38,10 @@ li a:hover {
     margin: 0 20px;
 }
 
+#instructions{
+    margin-top: 10px;
+}
+
 input{
     border-radius: 5px;
 }
@@ -48,4 +52,8 @@ input[type=text]{
 
 #description{
     height: 100px;
+}
+
+#form{
+    margin: 0 30px;
 }
