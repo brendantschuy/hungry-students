@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Access";
+    <!--Layout = "~/Views/Shared/_layout.cshtml";-->
+}
+
+<script>
+    function ConnectToDatabase() {
+        $.get("/Home/ConnectToDatabase", function (data) {
+            $("p").html(data);
+        });
+    }
+</script>
+
+@using bs2.Controllers;
+
+<p>Hello</p>
+<div>
+    <!--asp:LinkButton ID="btnSumb" runat="server" Text="sgas" OnClick="ConnectToDatabase" />-->
+    <button onclick="ConnectToDatabase()" type="button" title="Connect to Database">Connect</button>
+    <h1>Hello from our view.</h1>
+    <h2>@ViewBag.name</h2>
+    <input type="button" title="Get message." onclick="GetMessage()" value= "Get Message." />
+    <p id="asdf"></p>
+    <p id="db"></p>
+    <form id="searchentry">
+        <input type="text" name="searchbox" id="searchbox"/>
+        <input type="button" value="submit" onclick="Search()"/>
+    </form>
+    <p></p>
+</div>
