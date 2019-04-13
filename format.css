@@ -9,6 +9,10 @@ header {
     text-align: center;
 }
 
+body {
+    margin: 0 20px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -36,4 +40,8 @@ li a:hover {
 
 #welcome, #instructions {
     margin: 0 20px;
+}
+
+#search-div, #google-map {
+
 }
