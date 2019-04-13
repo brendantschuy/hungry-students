@@ -37,3 +37,15 @@ li a:hover {
 #welcome, #instructions {
     margin: 0 20px;
 }
+
+input{
+    border-radius: 5px;
+}
+
+input[type=text]{
+    width: 400px;
+}
+
+#description{
+    height: 100px;
+}
