@@ -59,12 +59,12 @@ using bs2.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 242, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03add3a36ea24d838b9744df7f7f3029", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d9ef3e99bf84db0819a2188ebaa6a8b", async() => {
                 BeginContext(31, 107, true);
                 WriteLiteral("\r\n    <title>Hungry Students</title>\r\n    <header>\r\n        <h1>Hungry Students</h1>\r\n    </header>\r\n\r\n    ");
                 EndContext();
                 BeginContext(138, 63, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "63d42a1e191843898ff6fbf191e63298", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8500486075414461a2c084c0e3576e6c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -84,7 +84,7 @@ using bs2.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(207, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0687a52d8a3c4d62a864bb6b4d5f3c5f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55246ac1f424416f9090d6dedc39cdb1", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -117,7 +117,7 @@ using bs2.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(271, 289, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "414c78a9484043b3a42a0cacda21989e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5662328cd0f34af18ae402f0c86d9270", async() => {
                 BeginContext(277, 132, true);
                 WriteLiteral("\r\n    <div id=\"menu-bar\">\r\n        <ul>\r\n            <li><a href=\"/Home/add_event\">Home</a></li>\r\n            <li>\r\n                ");
                 EndContext();

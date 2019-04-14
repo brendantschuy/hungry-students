@@ -12,9 +12,6 @@ namespace bs2.Controllers
 {
     public class HomeController : Controller
     {
-
-
-        
         SqlConnection conn;
         public IActionResult Index()
         {
@@ -77,16 +74,27 @@ namespace bs2.Controllers
             conn = new SqlConnection(connString);
             conn.Open();
 
-            var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name = '" + query + "';", conn);
+            var poop = "Hackathon";
+
+            var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name LIKE '%" + poop + "%';", conn);
             
-            cmd.ExecuteNonQuery();
+            //cmd.ExecuteNonQuery();
             var reader = cmd.ExecuteReader();
             string result = "";
-            while(reader.Read())
+            if(reader.HasRows)
             {
-                result += reader.GetString(1);
+                while(reader.Read())
+                {
+                    result += (string)reader.GetString(0);
+                    reader.NextResult();
+                }
+            }
+            else
+            {
+                result = "None found.";
             }
 
+            reader.Close();
             conn.Close();
 
             return new JsonResult(new
@@ -96,7 +104,7 @@ namespace bs2.Controllers
             });
            
         }
-        
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

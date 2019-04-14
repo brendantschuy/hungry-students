@@ -101,7 +101,7 @@ using bs2.Controllers;
             WriteLiteral("<div id = \"instructions\">\r\n        Know of an event with free food? Add it! \r\n        <p>Include the name, category, date, start time/end time, \r\n        address, and a brief description of the event.</p>\r\n    </div>\r\n\r\n    <div id = \"form\">\r\n        ");
             EndContext();
             BeginContext(1487, 1147, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "336d0398c6814ad898e4fcb4d82aec80", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78281e9e458c466c8d4c90da2b8e3119", async() => {
                 BeginContext(1493, 1134, true);
                 WriteLiteral(@"<br>
             Event name:<br>

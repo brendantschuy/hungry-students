@@ -6,7 +6,17 @@
 <script>
     function ConnectToDatabase() {
         $.get("/Home/ConnectToDatabase", function (data) {
-            $("p").html(data);
+            //$("p").html(data);
+        });
+    }
+
+    function SearchDatabase()
+    {
+    var query = document.getElementById("search-description").value;
+    $.get("/Home/Search", { query },
+        function (response)
+        {
+            $('db').append(response.data + "<br/>");
         });
     }
 </script>
@@ -21,7 +31,7 @@
     </div>
 
     <div id="search-div">
-        <input type="text" id="search-description"><button onclick="Search()" value="Go!">
+        <input type="text" id="search-description"><button onclick="SearchDatabase()" value="Go!">Go!</button>
     </div>
     <div class="container body-content">
         <div>
