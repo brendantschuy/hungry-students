@@ -1,1 +1,5 @@
+This is a crowd-sourced website that allows users to view and share events in their area that provide free food.
+
+The architecture is ASP.NET Core MVC, an MSSQL database hosted on Microsoft Azure, and a JQuery/JS front end.
+
 http://web.cecs.pdx.edu/~nleong2/hungry-students/index.html
