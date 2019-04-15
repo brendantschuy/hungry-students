@@ -1,5 +1,6 @@
 namespace bs2.Models
 {
+    //Contains all information needed to bundle together in database requests.
     public class DatabaseEntry
     {
         public DatabaseEntry(string name, int st, int end, int date, string address, string desc, string types)

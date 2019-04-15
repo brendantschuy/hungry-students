@@ -1,27 +1,21 @@
+//AJAX/JSON template if needed later:
 /*jQuery.ajax({
     url: 'DatabaseController.cs',
     type: "POST",
     data: 
 })*/
 
-
-//Grabs message from controller
-function GetMessage()
-{
-    $.get("/Database/GetMessage",
-        function (data)
-        {
-            $("#asdf").html(data);
-        });
-}
-
+/*Function that tests database connection for debugging
+purposes.*/
 function ConnectToDatabase() {
     $.get("/Home/ConnectToDatabase", function (data) {
         //$("p").html(data);
     });
 }
 
-//Sends SQL query to database
+/*Sends search query to server. Server handles with SQL request
+and returns list of DatabaseEntry model objects. Function loops
+through JSON object and prints names.*/
 function SearchDatabase()
 {
     var query = document.getElementById("search-description").value;
@@ -36,6 +30,8 @@ function SearchDatabase()
         });
 }
 
+/*Function not implemented yet. This will send an AJAX request 
+to server using an object created from user input.*/
 function AddToDatabase()
 {
     /*var eventname = $("#event_name").val();

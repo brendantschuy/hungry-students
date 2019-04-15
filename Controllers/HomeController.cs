@@ -76,10 +76,11 @@ namespace bs2.Controllers
 
             var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name LIKE '%" + query + "%';", conn);
             
-            //cmd.ExecuteNonQuery();
             var reader = cmd.ExecuteReader();
-            //string result = "";
+
             List<DatabaseEntry> searchResult = new List<DatabaseEntry>();
+
+            //Populates list using data from SQL database:
             if(reader.HasRows)
             {
                 while(reader.Read())
@@ -93,17 +94,6 @@ namespace bs2.Controllers
                     string etypes = reader.GetString(6);
 
                     searchResult.Add(new DatabaseEntry(ename, estart, eend, edate, eaddress, edesc,etypes));
-
-
-                    /*result += "<ul id='responses'>";
-                    result += "<li> Name: " + (string)reader.GetString(0) + "</li><br/>";
-                    result += "<li> Start: " + reader.GetInt32(1).ToString() + "</li><br/>";
-                    result += "<li> End: " + reader.GetInt32(2).ToString() + "</li><br/>";
-                    result += "<li> Date: " + reader.GetInt32(3).ToString() + "</li><br/>";
-                    result += "<li> Address: " + (string)reader.GetString(4) + "</li><br/>";
-                    result += "<li> Description: " + reader.GetString(5) + "</li><br/>";
-                    result += "</ul>";*/
-                    //reader.NextResult();
                 }
             }
             else
@@ -114,9 +104,9 @@ namespace bs2.Controllers
             reader.Close();
             conn.Close();
 
+            //Returns MVC model object:
             return new JsonResult(new
             {
-                //Data = "Hello.",
                 Data = searchResult,
             });
            
