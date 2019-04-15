@@ -23,10 +23,15 @@ function SearchDatabase()
         function (response)
         {
             var length = response.data.length;
+            if(length > 0)
+            {
+                $('#db').append("<ol>");
+            }
             for(i = 0; i < length; i++)
             {
-                $('#db').append(response.data[i].eventName + "<br/>");
+                $('#db').append("<li>" + response.data[i].eventName + "</li><br/>");
             }
+            //if(i == length) $('#db').append("</ol>");
         });
 }
 
