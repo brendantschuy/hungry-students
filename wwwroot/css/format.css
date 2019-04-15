@@ -18,12 +18,16 @@ body {
     margin: 0 20px;
 }
 
-ul {
-    list-style-type: none;
+#heading_menu {
+    /*list-style-type: none;*/
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgb(27,38,49);
+}
+
+ul {
+    list-style-type: disc;
 }
 
 li {
@@ -86,4 +90,9 @@ form button{
 
 #end_time {
     margin-left: 23px;
+}
+
+#responses
+{
+    list-style-type: disc;
 }

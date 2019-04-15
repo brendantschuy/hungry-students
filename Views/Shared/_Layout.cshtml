@@ -8,11 +8,12 @@
 
     <link rel="stylesheet" type="text/css" href="~/css/format.css">
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/database.js"></script>
 </head>
 
 <body>
     <div id="menu-bar">
-        <ul>
+        <ul id ="heading_menu">
             <li><a href="/Home/add_event">Home</a></li>
             <li>
                 @Html.ActionLink("Add Event", "AddPage", "Home", new { id = "32" }, null)

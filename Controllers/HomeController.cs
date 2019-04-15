@@ -74,24 +74,41 @@ namespace bs2.Controllers
             conn = new SqlConnection(connString);
             conn.Open();
 
-            var poop = "Hackathon";
-
-            var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name LIKE '%" + poop + "%';", conn);
+            var cmd = new SqlCommand("SELECT * FROM new_food WHERE event_name LIKE '%" + query + "%';", conn);
             
             //cmd.ExecuteNonQuery();
             var reader = cmd.ExecuteReader();
-            string result = "";
+            //string result = "";
+            List<DatabaseEntry> searchResult = new List<DatabaseEntry>();
             if(reader.HasRows)
             {
                 while(reader.Read())
                 {
-                    result += (string)reader.GetString(0);
-                    reader.NextResult();
+                    string ename = reader.GetString(0);
+                    int estart = reader.GetInt32(1);
+                    int eend = reader.GetInt32(2);
+                    int edate = reader.GetInt32(3);
+                    string eaddress = reader.GetString(4);
+                    string edesc = reader.GetString(5);
+                    string etypes = reader.GetString(6);
+
+                    searchResult.Add(new DatabaseEntry(ename, estart, eend, edate, eaddress, edesc,etypes));
+
+
+                    /*result += "<ul id='responses'>";
+                    result += "<li> Name: " + (string)reader.GetString(0) + "</li><br/>";
+                    result += "<li> Start: " + reader.GetInt32(1).ToString() + "</li><br/>";
+                    result += "<li> End: " + reader.GetInt32(2).ToString() + "</li><br/>";
+                    result += "<li> Date: " + reader.GetInt32(3).ToString() + "</li><br/>";
+                    result += "<li> Address: " + (string)reader.GetString(4) + "</li><br/>";
+                    result += "<li> Description: " + reader.GetString(5) + "</li><br/>";
+                    result += "</ul>";*/
+                    //reader.NextResult();
                 }
             }
             else
             {
-                result = "None found.";
+                
             }
 
             reader.Close();
@@ -99,8 +116,8 @@ namespace bs2.Controllers
 
             return new JsonResult(new
             {
-                Data = result,
-                //JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                //Data = "Hello.",
+                Data = searchResult,
             });
            
         }

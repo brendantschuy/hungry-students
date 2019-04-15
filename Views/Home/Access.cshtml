@@ -3,25 +3,6 @@
     <!--Layout = "~/Views/Shared/_layout.cshtml";-->
 }
 
-<script>
-    function ConnectToDatabase() {
-        $.get("/Home/ConnectToDatabase", function (data) {
-            //$("p").html(data);
-        });
-    }
-
-    function SearchDatabase()
-    {
-    var query = document.getElementById("search-description").value;
-    $.get("/Home/Search", { query },
-        function (response)
-        {
-            $('db').append(response.data + "<br/>");
-        });
-    }
-</script>
-
-@using bs2.Controllers;
 <div id="welcome">
         <h2>Welcome to Hungry Students!</h2>
         <p>We understand the stress students go through while in school. Here, you can 
@@ -35,8 +16,6 @@
     </div>
     <div class="container body-content">
         <div>
-        <!--asp:LinkButton ID="btnSumb" runat="server" Text="sgas" OnClick="ConnectToDatabase" />-->
-            <button onclick="ConnectToDatabase()" type="button" title="Connect to Database">Connect</button>
             <p id = "db"></p>
         </div>
         <hr />
@@ -45,4 +24,3 @@
         </footer>
     </div>
 </div>
-
